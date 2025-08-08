@@ -7,7 +7,7 @@ export const ProductPage = () => {
   return (
    <main>
 
-        <h1> Prueba Técnica - Productos + Carrito de Compras</h1>
+        <h1 className={ style.title_page }> Prueba Técnica - Productos + Carrito de Compras</h1>
 
         <div className={ style.sections_container }>
             <section>
