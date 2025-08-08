@@ -1,0 +1,28 @@
+
+.container_cart {
+    /* border: 1px solid rgb(210, 210, 210); */
+    border: none;
+    box-shadow: -2px 4px 13px 2px rgba(0,0,0,0.43);
+    -webkit-box-shadow: -2px 4px 13px 2px rgba(0,0,0,0.43);
+    -moz-box-shadow: -2px 4px 13px 2px rgba(0,0,0,0.43);
+    padding: 2rem 0;
+}
+
+.products_cart {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.title_cart {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.text_cart {
+    margin: 0.3rem 0
+}

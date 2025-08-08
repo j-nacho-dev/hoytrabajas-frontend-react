@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react"
-import { addToCart, getProducts } from "../../actions"
+import { addToCart, getProductCart, getProducts } from "../../actions"
 import { ProductItem } from "./ProductItem"
 
 import type { Product } from "../../interface/product.interface"
 import style from './ProductList.module.css'
 
 
-export const ProductList = () => {
+interface Props {
+  onGetCartProduct: ( cartProduct: Product[] ) => void
+}
+
+export const ProductList = ({onGetCartProduct}: Props) => {
 
   const [products, setProducts] = useState<Product[]>([])
 
@@ -24,6 +28,8 @@ export const ProductList = () => {
   const onHandleProductAdd = async( id: number) => {
     try {
       await addToCart(id)
+      const cartProdcuts = await getProductCart()
+      onGetCartProduct( cartProdcuts )
 
     } catch (error) {
       console.log(error)

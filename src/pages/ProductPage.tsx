@@ -1,8 +1,29 @@
+import { useCallback, useEffect, useState } from 'react'
 import { CartView } from '../components/cart/CartView'
 import { ProductList } from '../components/product/ProductList'
 import style from './ProductPage.module.css'
+import type { Product } from '../interface'
+import { getProductCart } from '../actions'
 
-export const ProductPage = () => {
+export const ProductPage = () => {   
+    
+  const [cart, setCart] = useState<Product[]>([])
+
+  const onGetCartProduct = useCallback(( cartProduct:Product[] ) => {
+    // console.log({cartProduct})
+    setCart( cartProduct )
+  },[])
+
+  const loadCart = useCallback(async () => {
+    const cartProductLoad = await getProductCart();
+    setCart(cartProductLoad);
+  }, []);
+
+  useEffect(() => {
+    loadCart()
+  }, [loadCart])
+  
+  
 
   return (
    <main>
@@ -11,11 +32,11 @@ export const ProductPage = () => {
 
         <div className={ style.sections_container }>
             <section>
-                <ProductList />
+                <ProductList onGetCartProduct={ onGetCartProduct } />
             </section>
 
             <aside>
-                <CartView />
+                <CartView cart={ cart } />
             </aside>
         </div>
         
