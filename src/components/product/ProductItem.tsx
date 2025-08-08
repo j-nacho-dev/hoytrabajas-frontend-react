@@ -1,11 +1,28 @@
 import style from './ProductItem.module.css'
 
-export const ProductItem = () => {
+interface Props {
+  id: number;
+  name:string;
+  price: number;
+  addProductToCart: (id: number) => void 
+}
+
+export const ProductItem = ({ id, name, price, addProductToCart }:Props) => {
+
   return (
     <div className={ style.container_item } >
-        <h3 className={ style.title_item }> Product 1 </h3>
-        <p className={ style.price_item }> $120 </p>
-        <button className={ style.button_item }> Add To Cart </button>
+
+        <h3 className={ style.title_item }> { name } </h3>
+
+        <p className={ style.price_item }> ${ price } </p>
+
+        <button 
+          className={ style.button_item }
+          onClick={ () => addProductToCart( id ) }
+        > 
+          Add To Cart 
+        </button>
+
     </div>
   )
 }
