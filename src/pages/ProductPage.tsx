@@ -1,5 +1,5 @@
-import { CartView } from '../components/CartView'
-import { ProductList } from '../components/ProductList'
+import { CartView } from '../components/cart/CartView'
+import { ProductList } from '../components/product/ProductList'
 import style from './ProductPage.module.css'
 
 export const ProductPage = () => {

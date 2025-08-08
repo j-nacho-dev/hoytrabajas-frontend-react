@@ -1,0 +1,30 @@
+
+
+.container_item {
+    max-width: 220px;
+    width: 200px;
+    background-color: rgb(235, 234, 234);
+    border-radius: 5px;
+}
+
+.title_item {
+    text-align: center;
+    padding-top: 1rem;
+    color: rgb(253, 91, 32);
+}
+
+.price_item {
+    text-align: center;
+}
+
+.button_item {
+    font-size: 1rem;
+    width: 100%;
+    padding: 1rem 1rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    background-color: rgb(26, 1, 84);
+    color: white;
+    cursor: pointer;
+}
