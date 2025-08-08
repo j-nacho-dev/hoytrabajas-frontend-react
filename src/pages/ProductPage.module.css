@@ -1,0 +1,8 @@
+
+.sections_container {
+    display: grid;
+    grid-template-columns: 4fr repeat(3, 0) 1fr;
+    grid-template-rows: 1fr repeat(4, 0);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }

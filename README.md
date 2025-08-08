@@ -16,7 +16,7 @@ Construido con React, TypeScript y Vite.
 
   ```bash
       # Clonar el repositorio
-      git clone 
+      git clone https://github.com/j-nacho-dev/hoytrabajas-frontend-react.git
 
       # Instalar dependencias
       npm install
