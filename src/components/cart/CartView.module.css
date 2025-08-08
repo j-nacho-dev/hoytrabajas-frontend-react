@@ -9,7 +9,7 @@
 }
 
 .products_cart {
-    width: 200px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;

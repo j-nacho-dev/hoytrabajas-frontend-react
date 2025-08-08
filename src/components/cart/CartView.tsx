@@ -1,9 +1,11 @@
+import { duplicateProductCart } from "../../helpers/duplicate-product-cart.helper"
 import type { Product } from "../../interface"
 import style from './CartView.module.css'
 
 export const CartView = ({ cart }: { cart: Product[] }) => {
 
-  
+  const newCart = duplicateProductCart( cart )
+
 
   if( !cart.length ) return <h3 style={{ textAlign: 'center' }}>Empty Cart</h3>
   
@@ -13,9 +15,9 @@ export const CartView = ({ cart }: { cart: Product[] }) => {
       <div className={style.products_cart} >
 
           {
-            cart.map( ({ id, name, price }) => (
+            newCart.map( ({ id, name, price, quantity }) => (
               <div key={id}>
-                  <p className={ style.text_cart }>{ name } - ${ price }</p>
+                  <p className={ style.text_cart }>{ name } - ${ price } - count: { quantity }</p>
               </div>
             ) )
           }
