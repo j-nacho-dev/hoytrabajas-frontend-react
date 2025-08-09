@@ -4,6 +4,8 @@ import { ProductItem } from "./ProductItem"
 
 import type { Product } from "../../interface/product.interface"
 import style from './ProductList.module.css'
+import { findBestCombination } from "../../helpers/find-best-combination.helpers"
+
 
 
 interface Props {
@@ -19,7 +21,7 @@ export const ProductList = ({onGetCartProduct}: Props) => {
     try {
       const productsApi = await getProducts()
       setProducts(productsApi) 
-
+      
     } catch (error) {
       console.log(error)
     } 
@@ -37,9 +39,12 @@ export const ProductList = ({onGetCartProduct}: Props) => {
   }
 
   useEffect(() => {
-    fetchProducts()
+    fetchProducts() 
+
   }, [])
+
   
+  findBestCombination(products, 150)
 
   return (
     <div className={ style.container_list } >

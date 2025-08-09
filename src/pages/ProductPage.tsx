@@ -22,6 +22,8 @@ export const ProductPage = () => {
   useEffect(() => {
     loadCart()
   }, [loadCart])
+
+
   
   
 
