@@ -21,6 +21,9 @@ Construido con React, TypeScript y Vite.
       # Instalar dependencias
       npm install
 
+      # En modo desarrollo 
+      cambiar la variable de entorno a http://localhost:3000 para que corra
+
       # Ejecutar en desarrollo
       npm run dev
 
