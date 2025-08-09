@@ -20,7 +20,7 @@ export const BestCombination = ({ products }: { products: Product[] }) => {
 
   return (
     <div className={ style.container_comb }>  
-        <h3 className={ style.title_comb }>Calcular Mejor Combinacion</h3>
+        <h3 className={ style.title_comb }> Mejor Combinacion</h3>
         
         <div className={ style.container_section }>
             <input 
