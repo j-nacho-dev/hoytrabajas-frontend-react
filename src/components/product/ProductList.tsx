@@ -1,6 +1,6 @@
 
-import { addToCart, getProductCart } from "../../actions"
 import { ProductItem } from "./ProductItem"
+import { addToCart, getProductCart } from "../../actions"
 
 import type { Product } from "../../interface/product.interface"
 import style from './ProductList.module.css'

@@ -1,6 +1,7 @@
-import { duplicateProductCart } from "../../helpers/duplicate-product-cart.helper"
-import type { Product } from "../../interface"
+import { duplicateProductCart } from "../../helpers"
+
 import style from './CartView.module.css'
+import type { Product } from "../../interface"
 
 export const CartView = ({ cart }: { cart: Product[] }) => {
 

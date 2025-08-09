@@ -7,6 +7,8 @@ interface Props {
   addProductToCart: (id: number) => void 
 }
 
+
+
 export const ProductItem = ({ id, name, price, addProductToCart }:Props) => {
 
   return (

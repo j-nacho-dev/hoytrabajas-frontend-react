@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useState } from 'react'
-import { CartView } from '../components/cart/CartView'
-import { ProductList } from '../components/product/ProductList'
+import { CartView, BestCombination, ProductList } from '../components'
+import { getProductCart, getProducts } from '../actions'
+
 import style from './ProductPage.module.css'
 import type { Product } from '../interface'
-import { getProductCart, getProducts } from '../actions'
-import { BestCombination } from '../components/best-combination/BestCombination'
+
+
+
 
 export const ProductPage = () => {   
   

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { findBestCombination } from "../../helpers/find-best-combination.helpers";
+import { findBestCombination } from "../../helpers";
 
 import type { Product, Result } from "../../interface"
 import style from './BestCombination.module.css'
