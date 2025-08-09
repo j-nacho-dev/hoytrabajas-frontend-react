@@ -1,14 +1,4 @@
-import type { Product } from "../interface";
-
-interface Result { 
-    items: Product[]; 
-    total: number 
-};
-
-interface Combination { 
-    items: Product[]; 
-    sum: number 
-};
+import type { Combination, Product, Result } from "../interface";
 
 
 export function findBestCombination(products: Product[], budget: number): Result {

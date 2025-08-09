@@ -9,4 +9,10 @@
   .title_page {
     text-align: center;
     margin: 5rem 0;
+    background-color: rgb(250, 210, 195);
+    padding: 2rem 0;
+  }
+
+  .aside_page {
+    margin: 0 auto;
   }

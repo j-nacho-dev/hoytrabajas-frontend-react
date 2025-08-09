@@ -3,11 +3,23 @@ import { CartView } from '../components/cart/CartView'
 import { ProductList } from '../components/product/ProductList'
 import style from './ProductPage.module.css'
 import type { Product } from '../interface'
-import { getProductCart } from '../actions'
+import { getProductCart, getProducts } from '../actions'
+import { BestCombination } from '../components/best-combination/BestCombination'
 
 export const ProductPage = () => {   
-    
+  
+  const [products, setProducts] = useState<Product[]>([])
   const [cart, setCart] = useState<Product[]>([])
+
+  const fetchProducts = async() => {
+    try {
+      const productsApi = await getProducts()
+      setProducts(productsApi) 
+      
+    } catch (error) {
+      console.log(error)
+    } 
+  }
 
   const onGetCartProduct = useCallback(( cartProduct:Product[] ) => {
     // console.log({cartProduct})
@@ -23,22 +35,24 @@ export const ProductPage = () => {
     loadCart()
   }, [loadCart])
 
+  useEffect(() => {
+    fetchProducts() 
+  }, [])
 
-  
-  
 
   return (
    <main>
 
-        <h1 className={ style.title_page }> Prueba Técnica - Productos + Carrito de Compras</h1>
-
         <div className={ style.sections_container }>
+          
             <section>
-                <ProductList onGetCartProduct={ onGetCartProduct } />
+              <h1 className={ style.title_page }> Prueba Técnica - Productos + Carrito de Compras</h1>
+                <ProductList products={products} onGetCartProduct={ onGetCartProduct } />
             </section>
 
-            <aside>
+            <aside className={ style.aside_page }>
                 <CartView cart={ cart } />
+                <BestCombination products={ products } />
             </aside>
         </div>
         

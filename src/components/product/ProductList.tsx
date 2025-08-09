@@ -1,31 +1,19 @@
-import { useEffect, useState } from "react"
-import { addToCart, getProductCart, getProducts } from "../../actions"
+
+import { addToCart, getProductCart } from "../../actions"
 import { ProductItem } from "./ProductItem"
 
 import type { Product } from "../../interface/product.interface"
 import style from './ProductList.module.css'
-import { findBestCombination } from "../../helpers/find-best-combination.helpers"
 
 
 
 interface Props {
-  onGetCartProduct: ( cartProduct: Product[] ) => void
+  onGetCartProduct: ( cartProduct: Product[] ) => void;
+  products: Product[]
 }
 
-export const ProductList = ({onGetCartProduct}: Props) => {
 
-  const [products, setProducts] = useState<Product[]>([])
-
-  const fetchProducts = async() => {
-
-    try {
-      const productsApi = await getProducts()
-      setProducts(productsApi) 
-      
-    } catch (error) {
-      console.log(error)
-    } 
-  }
+export const ProductList = ({onGetCartProduct, products}: Props) => {
 
   const onHandleProductAdd = async( id: number) => {
     try {
@@ -37,14 +25,6 @@ export const ProductList = ({onGetCartProduct}: Props) => {
       console.log(error)
     } 
   }
-
-  useEffect(() => {
-    fetchProducts() 
-
-  }, [])
-
-  
-  findBestCombination(products, 150)
 
   return (
     <div className={ style.container_list } >

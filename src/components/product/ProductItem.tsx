@@ -20,7 +20,7 @@ export const ProductItem = ({ id, name, price, addProductToCart }:Props) => {
           className={ style.button_item }
           onClick={ () => addProductToCart( id ) }
         > 
-          Add To Cart 
+          Agregar al carrito 
         </button>
 
     </div>

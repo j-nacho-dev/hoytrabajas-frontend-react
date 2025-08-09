@@ -7,17 +7,17 @@ export const CartView = ({ cart }: { cart: Product[] }) => {
   const newCart = duplicateProductCart( cart )
 
 
-  if( !cart.length ) return <h3 style={{ textAlign: 'center' }}>Empty Cart</h3>
+  if( !cart.length ) return <h3 style={{ textAlign: 'center' }}>Carro Vacio</h3>
   
   return (
     <div className={ style.container_cart }>
-      <h2 className={ style.title_cart } >Cart </h2>
+      <h2 className={ style.title_cart } >Carro </h2>
       <div className={style.products_cart} >
 
           {
             newCart.map( ({ id, name, price, quantity }) => (
               <div key={id}>
-                  <p className={ style.text_cart }>{ name } - ${ price } - count: { quantity }</p>
+                  <p className={ style.text_cart }>{ name } - ${ price } - cant: { quantity }</p>
               </div>
             ) )
           }
